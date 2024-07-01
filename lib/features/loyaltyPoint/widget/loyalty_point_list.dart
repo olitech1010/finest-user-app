@@ -23,7 +23,7 @@ class LoyaltyPointListView extends StatelessWidget {
         int? pageSize;
         pageSize = Provider.of<LoyaltyPointProvider>(context, listen: false).loyaltyPointPageSize;
 
-        if(offset < pageSize) {
+        if(offset < pageSize!) {
           offset++;
           if (kDebugMode) {
             print('end of the page');

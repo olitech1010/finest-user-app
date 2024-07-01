@@ -66,7 +66,7 @@ class _LoyaltyPointConverterDialogueState extends State<LoyaltyPointConverterDia
                       inputType: TextInputType.number,
                       onChanged: (value){
                         setState(() {
-                          convertPointAmount = double.parse(value)/exchangeRate;
+                          convertPointAmount = double.parse(value)/exchangeRate!;
                         });}),
 
                     const SizedBox(height: Dimensions.paddingSizeSmall),
@@ -117,7 +117,7 @@ class _LoyaltyPointConverterDialogueState extends State<LoyaltyPointConverterDia
                         isBorder: true,
                         onTap: (){
                           int point = int.parse(_convertPointAmountController.text.trim());
-                          if(point < min){
+                          if(point < min!){
                             Navigator.pop(context);
                             showCustomSnackBar('${getTranslated('minimum_point_is', context)!} $min', context, isToaster: true);
                           }

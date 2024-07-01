@@ -64,14 +64,14 @@ class CartBottomSheetState extends State<CartBottomSheet> {
                 variationList.add(widget.product!.choiceOptions![index].options![details.variationIndex![index]].trim());
 
               }
-              String variationType = '';
+              String? variationType = '';
               variationType = variantName;
               for (var variation in variationList) {
                 variationType = '$variationType-$variation';
               }
                           double? price = widget.product!.unitPrice;
               int? stock = widget.product!.currentStock;
-              variationType = variationType.replaceAll(' ', '');
+              variationType = variationType?.replaceAll(' ', '');
               for(Variation variation in widget.product!.variation!) {
                 if(variation.type == variationType) {
                   price = variation.price;
