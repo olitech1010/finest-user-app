@@ -2,12 +2,12 @@ buildscript {
     ext.kotlin_version = '1.8.0'
     repositories {
         google()
-        jcenter()
+        mavenCentral()  // Replace jcenter() with mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.1'
-        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.android.tools.build:gradle:8.1.0'  // Updated from 7.2.1
+        classpath 'com.google.gms:google-services:4.3.15'  // Updated from 4.3.10
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -15,7 +15,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()  // Replace jcenter() with mavenCentral()
     }
 
     tasks.withType(JavaCompile) {
